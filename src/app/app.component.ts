@@ -9,7 +9,8 @@ export class AppComponent {
   servers = [
     {
       instanceType: 'medium',
-      name: 'Production Server',
+      //The name was changed from "Production Server" to test the shorten pipe.
+      name: 'Production',
       status: 'stable',
       started: new Date(1977, 1, 11)
     },
