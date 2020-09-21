@@ -1,7 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filter'
+  name: 'filter',
+  //The pure option reference is https://angular.io/api/core/Pipe#options
+  //This might lead to performance issues, because we are expressing here that it will invoke the transform method not only by the change of arguments.
+  //So, the pipe is invoked on each change-detection cycle, even if the arguments have not changed.
+  pure: false
 })
 export class FilterPipe implements PipeTransform {
 
