@@ -36,6 +36,13 @@ export class AppComponent {
 
   filteredStatus: string = '';
 
+  //The property is a Promise that after 2 secs it will execute the resolve action that will give the string stable.
+  appStatus = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('stable');
+    }, 2000);
+  });
+
   getStatusClasses(server: {instanceType: string, name: string, status: string, started: Date}) {
     return {
       'list-group-item-success': server.status === 'stable',
